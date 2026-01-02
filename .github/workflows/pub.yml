@@ -17,6 +17,10 @@ jobs:
           node-version: "18.20.8"
           registry-url: https://registry.npmjs.org
 
+      # manually drop any .npmrc
+      - run: cat ~/.npmrc .npmrc
+      - run: rm -f ~/.npmrc .npmrc
+
       # Task execution
       - run: npm version
       - run: npm config list
