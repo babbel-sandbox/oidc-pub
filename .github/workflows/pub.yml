@@ -24,4 +24,4 @@ jobs:
       - run: |
           echo "OIDC token available"
           echo "${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
-      - run: npm publish --access public
+      - run: npm publish --registry=https://registry.npmjs.org/ --access public
