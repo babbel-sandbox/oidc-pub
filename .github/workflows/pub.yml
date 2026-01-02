@@ -20,6 +20,7 @@ jobs:
       # Task execution
       - run: npm ci
       # authenticate by OIDC
+      - run: npm view @babbel-sandbox/oidc-pub
       - run: |
           echo "OIDC token available"
           echo "${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
