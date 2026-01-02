@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     permissions:
-      contents: write
+      contents: read
       id-token: write
     steps:
       - uses: actions/checkout@v3
@@ -18,8 +18,10 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       # manually drop any .npmrc
-      - run: cat ~/.npmrc .npmrc
-      - run: rm -f ~/.npmrc .npmrc
+      # - run: cat ~/.npmrc .npmrc
+      # - run: rm -f ~/.npmrc .npmrc
+
+      - run: env | grep -e NODE
 
       # Task execution
       - run: npm version
