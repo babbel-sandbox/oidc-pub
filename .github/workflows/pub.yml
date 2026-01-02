@@ -18,6 +18,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       # Task execution
+      - run: npm version
       - run: npm ci
       # authenticate by OIDC
       - run: npm view @babbel-sandbox/oidc-pub
