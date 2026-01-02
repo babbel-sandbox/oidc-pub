@@ -1,5 +1,5 @@
 {
-  "name": "oidc-pub",
+  "name": "@babbel-sandbox/oidc-pub",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babbel-sandbox/oidc-pub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/babbel-sandbox/oidc-pub/issues"
+  },
+  "homepage": "https://github.com/babbel-sandbox/oidc-pub#readme",
   "description": ""
 }
