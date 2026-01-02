@@ -10,6 +10,9 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      NPM_CONFIG_USERCONFIG: ""
+      NODE_AUTH_TOKEN: ""
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
