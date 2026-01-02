@@ -10,29 +10,23 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    env:
-      NPM_CONFIG_USERCONFIG: ""
-      NODE_AUTH_TOKEN: ""
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: 24 # 18.20.8
+          node-version: 20 # 18.20.8
           registry-url: https://registry.npmjs.org
 
-      # manually drop any .npmrc
-      # - run: cat ~/.npmrc .npmrc
-      # - run: rm -f ~/.npmrc .npmrc
-
+      # debug
       - run: env | grep -e NODE
-
-      # Task execution
       - run: npm version
       - run: npm config list
-      - run: npm ci
-      # authenticate by OIDC
       - run: npm view @babbel-sandbox/oidc-pub
       - run: |
           echo "OIDC token available"
           echo "${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
+
+      - run: npm ci
+
+      # authenticate by OIDC
       - run: NODE_AUTH_TOKEN="" npm publish --registry=https://registry.npmjs.org/ --access public
