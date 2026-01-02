@@ -19,6 +19,7 @@ jobs:
 
       # Task execution
       - run: npm version
+      - run: npm config list
       - run: npm ci
       # authenticate by OIDC
       - run: npm view @babbel-sandbox/oidc-pub
