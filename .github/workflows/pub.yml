@@ -19,6 +19,6 @@ jobs:
       - run: npm ci
       # authenticate by OIDC
       - run: |
-        echo "OIDC token available"
-        echo "${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
+          echo "OIDC token available"
+          echo "${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
       - run: npm publish --access public
